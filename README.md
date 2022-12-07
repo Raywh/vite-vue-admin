@@ -8,6 +8,10 @@
 3. node version 16+
 4. pnpm version 7.x
 
+## * Next Generation
+1. mock
+2. package manager
+
 # clone
 git@github.com:Raywh/wh.git
 
