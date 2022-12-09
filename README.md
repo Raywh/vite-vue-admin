@@ -16,7 +16,7 @@
 git@github.com:Raywh/wh.git
 
 # enter the project directory
-cd qa-mark-client
+cd vite-vue-admin
 
 # install dependencies
 pnpm i
@@ -39,7 +39,7 @@ pnpm preview:prod
 
 ```bash
 # build the stage environment
-pnpm build:stage
+pnpm build:beta
 
 # build the prod environment
 pnpm build:prod
