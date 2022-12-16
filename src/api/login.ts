@@ -19,7 +19,7 @@ export function getLoginCodeApi() {
 /** 登录并返回 Token */
 export function loginApi(data: ILoginData) {
   return request({
-    url: "./api/v1/auth/login",
+    url: "/api/getUsers/login",
     method: "post",
     data
   })

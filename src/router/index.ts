@@ -45,32 +45,54 @@ export const constantRoutes: RouteRecordRaw[] = [
     redirect: "/dashboard",
     name: "DashboardMaintain",
     meta: {
-      title: "标记",
+      title: "Dashboard",
       elIcon: "Grid"
     },
     children: [
       {
         path: "/dashboard",
-        component: () => import("@/views/dashboard/admin/index.vue"),
+        component: () => import("@/views/Todo/index.vue"),
         name: "Dashboard1",
         meta: {
-          title: "问答标记",
-          svgIcon: "dashboard",
-          affix: true
-        }
-      },
-      {
-        path: "/dashboard2",
-        component: () => import("@/views/dashboard/editor/index.vue"),
-        name: "Dashboard2",
-        meta: {
-          title: "所有问题",
+          title: "Todo",
           svgIcon: "dashboard",
           affix: true
         }
       }
     ]
   },
+  // {
+  //   path: "/mark",
+  //   component: Layout,
+  //   redirect: "/dashboard",
+  //   name: "DashboardMaintain",
+  //   meta: {
+  //     title: "标记",
+  //     elIcon: "Grid"
+  //   },
+  //   children: [
+  //     {
+  //       path: "/dashboard",
+  //       component: () => import("@/views/dashboard/admin/index.vue"),
+  //       name: "Dashboard1",
+  //       meta: {
+  //         title: "问答标记",
+  //         svgIcon: "dashboard",
+  //         affix: true
+  //       }
+  //     },
+  //     {
+  //       path: "/dashboard2",
+  //       component: () => import("@/views/dashboard/editor/index.vue"),
+  //       name: "Dashboard2",
+  //       meta: {
+  //         title: "所有问题",
+  //         svgIcon: "dashboard",
+  //         affix: true
+  //       }
+  //     }
+  //   ]
+  // },
   // {
   //   path: "/unocss",
   //   component: Layout,

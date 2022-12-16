@@ -6,6 +6,7 @@ import { User, Lock } from "@element-plus/icons-vue"
 import ThemeSwitch from "@/components/ThemeSwitch/index.vue"
 import { type FormInstance, FormRules } from "element-plus"
 import { type ILoginData } from "@/api/login"
+import axios from "axios"
 
 const router = useRouter()
 const loginFormRef = ref<FormInstance | null>(null)
@@ -54,6 +55,14 @@ const handleLogin = () => {
     }
   })
 }
+axios
+  .get(`/api/getUsers`)
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 </script>
 
 <template>

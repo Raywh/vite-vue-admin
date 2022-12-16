@@ -5,6 +5,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx"
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
 import svgLoader from "vite-svg-loader"
 import UnoCSS from "unocss/vite"
+import { viteMockServe } from "vite-plugin-mock"
 
 /** 配置项文档：https://cn.vitejs.dev/config */
 export default (configEnv: ConfigEnv): UserConfigExport => {
@@ -19,30 +20,30 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         "@": resolve(__dirname, "./src")
       }
     },
-    server: {
-      /** 是否开启 HTTPS */
-      https: false,
-      /** 设置 host: true 才可以使用 Network 的形式，以 IP 访问项目 */
-      host: true, // host: "0.0.0.0"
-      /** 端口号 */
-      port: 3333,
-      /** 是否自动打开浏览器 */
-      open: false,
-      /** 跨域设置允许 */
-      cors: true,
-      /** 端口被占用时，是否直接退出 */
-      strictPort: false,
-      /** 接口代理 */
-      proxy: {
-        "/api/v1": {
-          target: "serve host",
-          ws: true,
-          /** 是否允许跨域 */
-          changeOrigin: true,
-          rewrite: (path) => path.replace("/api/v1", "")
-        }
-      }
-    },
+    // server: {
+    //   /** 是否开启 HTTPS */
+    //   https: false,
+    //   /** 设置 host: true 才可以使用 Network 的形式，以 IP 访问项目 */
+    //   host: true, // host: "0.0.0.0"
+    //   /** 端口号 */
+    //   port: 3333,
+    //   /** 是否自动打开浏览器 */
+    //   open: false,
+    //   /** 跨域设置允许 */
+    //   cors: true,
+    //   /** 端口被占用时，是否直接退出 */
+    //   strictPort: false,
+    //   /** 接口代理 */
+    //   proxy: {
+    //     "/api/v1": {
+    //       target: "serve host",
+    //       ws: true,
+    //       /** 是否允许跨域 */
+    //       changeOrigin: true,
+    //       rewrite: (path) => path.replace("/api/v1", "")
+    //     }
+    //   }
+    // },
     build: {
       /** 消除打包大小超过 500kb 警告 */
       chunkSizeWarningLimit: 2000,
@@ -73,6 +74,10 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), "src/icons/svg")],
         symbolId: "icon-[dir]-[name]"
+      }),
+      viteMockServe({
+        mockPath: "./src/mock/", // 解析mock的位置
+        localEnabled: true // 是否开启开发环境
       }),
       /** UnoCSS */
       UnoCSS()
