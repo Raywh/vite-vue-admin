@@ -9,8 +9,8 @@
 4. pnpm version 7.x
 
 ## * Next Generation
-1. mock
-2. package manager
+1. clock
+2. canvas
 
 # clone
 git@github.com:Raywh/wh.git

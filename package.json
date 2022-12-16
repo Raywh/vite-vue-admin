@@ -1,7 +1,7 @@
 {
-  "name": "qa-make",
+  "name": "wh-demo",
   "version": "0.0.1",
-  "description": "对问答的记录进行标记",
+  "description": "learn vue3 and typescript",
   "author": {
     "name": "wh",
     "email": "2256896349@qq.com"
@@ -88,7 +88,8 @@
     "element-plus",
     "element-plus-admin",
     "ts",
-    "typescript"
+    "typescript",
+    "todoList"
   ],
   "license": ""
 }
